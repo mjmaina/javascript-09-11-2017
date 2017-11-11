@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script type="text/JavaScript">
+        // creating functions and objects and writing them on alert from the form inputs
+        function showMessage(){
+            var first = document.getElementById("fname").value;
+            var last = document.getElementById("lname").value;
+            var Email = document.getElementById("email").value;
+            var phone = document.getElementById("phoneno").value;
+            //applying closure
+            var msg=(innerHeight=" Welcome:" +'   ' +first+ ' ' +last+ "\n" + "Other Details:" +"\n"
+                +"Email Is:" +'  '+Email+ "\n" +"Phone Number Is:" +'  ' +phone);
+            var say = function(){window.alert(msg);}
+            say ();
+           /* window.alert(innerHeight=" Welcome:" +'   ' +first+ ' ' +last+ "\n" + "Other Details:" +"\n"
+                +"Email Is:" +'  '+Email+ "\n" +"Phone Number Is:" +'  ' +phone);*/
+        }
+        showMessage("msg")
+
+        //function to calculate the income of user
+        function showIncome(){
+            var user = document.getElementById("username").value;
+            var sal= parseInt(document.getElementById("salary").value);
+            var sides = parseInt(document.getElementById("side_hustle").value);
+            var others = parseInt(document.getElementById("other_means").value);
+            var sum = others + sal + sides;
+            showMessage();
+            window.alert(innerHeight=" The Sum is:" +sum );
+
+        }
+
+    </script>
+</head>
+<body>
+<div class="grid-container">
+    <div class="icon-bar five-up">
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <ul class="dropdown menu" data-dropdown-menu>
+
+
+                    <li><a href="#"><img src="image/cytonn-logo.jpeg" width="100px" height="50px" /></a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li>
+                        <a href="#">Account</a>
+                        <ul class="menu vertical">
+                            <li><a href="#">Register</a></li>
+                            <li><a href="#">Login</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+                <ul class="menu">
+                    <li><input type="search" placeholder="Search"></li>
+                    <li><button type="button" class="button">Search</button></li>
+                </ul>
+            </div>
+        </div>
+    <br />
+        <div style="float: left; clear:both;">
+            <form method="post" action="" style="width: 300px" required>
+                Your First Name: <input type="text" id = "fname" required>
+                Your Last Name: <input type="text" id = "lname" required>
+                Your Email: <input type="email" id = "email" required>
+                Your Phone Number: <input type="text" id = "phoneno" required>
+                Your password: <input type="password" id = "pwd" required>
+                <input type="button" onclick="showMessage()" value="submit" />
+            </form>
+
+            <!--here is the code to prototype the function-->
+            <div>
+                <p id="demo" style="text-align: center;"></p>
+                <script>
+                    function vehicle(type, model, year) {
+                        this.carType = type;
+                        this.carModel = model;
+                        this.carYear = year;
+
+                    }
+
+                    var miniBus = new vehicle("van", "italy", 2017);
+                    var bus = new vehicle("Lorry", "german", 2016);
+
+                    miniBus.job = "commercial";
+
+                    document.getElementById("demo").innerHTML =
+                        "My minibus is " + miniBus.job;
+                </script>
+
+
+            </div>
+        </div>
+
+        <div style="float: right; margin: 0 auto;">
+
+            <p>Payment Expenses and Bank Details</p>
+            <form method="post" action="" style="width: 300px" required>
+                User Name: <input type="text" id = "username" required>
+                Job Salary: <input type="number" id = "salary" required>
+                Side Hustle: <input type="number" id = "side_hustle" required>
+                Others: <input type="number" id = "other_means" required>
+
+                <input type="button" onclick="showIncome()" value="submit" />
+            </form>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+<script src="js/vendor/jquery.js"></script>
+<script src="js/vendor/what-input.js"></script>
+<script src="js/vendor/foundation.js"></script>
+<script src="js/app.js"></script>
+
+
+</body>
+</html>
